@@ -30,3 +30,18 @@ function letterHistogram(str) {
     }
     console.log(toReturn);
 }
+
+function wordHistogram(str) {
+    var toReturn = {};
+    str = str.toLowerCase();
+    var arr = str.split(" ");
+    for (wordIndex in arr){
+        var word = arr[wordIndex];
+        if (word in toReturn) {
+            toReturn[word] += 1;
+        } else {
+            toReturn[word] = 1;
+        }
+    }
+    console.log(toReturn);
+}
