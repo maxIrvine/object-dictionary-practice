@@ -17,3 +17,16 @@ function main() {
         console.log(person);
     }
 }
+
+function letterHistogram(str) {
+    var toReturn = {};
+    for (letterIndex in str) {
+        var letter = str[letterIndex];
+        if (letter in toReturn) {
+            toReturn[letter] += 1;
+        } else {
+            toReturn[letter] = 1;
+        }
+    }
+    console.log(toReturn);
+}
