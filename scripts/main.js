@@ -18,6 +18,16 @@ function main() {
     }
 }
 
+function topThree(hist) {
+    var items = Object.keys(hist).map(function(key) {
+        return [key, dict[key]];
+    });
+    items.sort(function(first, second) {
+        return second[1] - first[1];
+    });
+    return "The top 3 are: " + items.slice(0,2);
+}
+
 function letterHistogram(str) {
     var toReturn = {};
     for (letterIndex in str) {
@@ -29,6 +39,8 @@ function letterHistogram(str) {
         }
     }
     console.log(toReturn);
+    console.log(topThree(toReturn));
+    return toReturn;
 }
 
 function wordHistogram(str) {
@@ -45,3 +57,4 @@ function wordHistogram(str) {
     }
     console.log(toReturn);
 }
+
